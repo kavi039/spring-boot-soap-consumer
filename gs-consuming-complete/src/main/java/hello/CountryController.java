@@ -14,9 +14,9 @@ public class CountryController {
 	CountryClient countryClient;
 	
 	@PostMapping("/country")
-	public GetCountryResponse getCountry(@RequestBody GetCountryRequest getCountryRequest) {
-		GetCountryResponse countryResponse = countryClient.getCountry(getCountryRequest);
-		return countryResponse;
+	public Param0 getCountry(@RequestBody Param0 param0) {
+		param0 = countryClient.getCountry(param0);
+		return param0;
 	}
 
 }

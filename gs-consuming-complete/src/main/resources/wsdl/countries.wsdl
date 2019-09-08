@@ -1,64 +1,130 @@
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://spring.io/guides/gs-producing-web-service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://spring.io/guides/gs-producing-web-service" targetNamespace="http://spring.io/guides/gs-producing-web-service">
-<wsdl:types>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://spring.io/guides/gs-producing-web-service">
-<xs:element name="getCountryRequest">
-<xs:complexType>
-<xs:sequence>
-<xs:element name="name" type="xs:string"/>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-<xs:element name="getCountryResponse">
-<xs:complexType>
-<xs:sequence>
-<xs:element name="country" type="tns:country"/>
-</xs:sequence>
-</xs:complexType>
-</xs:element>
-<xs:complexType name="country">
-<xs:sequence>
-<xs:element name="name" type="xs:string"/>
-<xs:element name="population" type="xs:int"/>
-<xs:element name="capital" type="xs:string"/>
-<xs:element name="currency" type="tns:currency"/>
-</xs:sequence>
-</xs:complexType>
-<xs:simpleType name="currency">
-<xs:restriction base="xs:string">
-<xs:enumeration value="GBP"/>
-<xs:enumeration value="EUR"/>
-<xs:enumeration value="PLN"/>
-</xs:restriction>
-</xs:simpleType>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://spring.io/guides/gs-producing-web-service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://spring.io/guides/gs-producing-web-service" targetNamespace="http://spring.io/guides/gs-producing-web-service">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://spring.io/guides/gs-producing-web-service">
+  <xs:element name="param0">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Request">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Header">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Country" type="xs:string"/>
+                    <xs:element name="ChannelId" type="xs:string"/>
+                    <xs:element name="ChannelUserId" type="xs:string"/>
+                    <xs:element name="TxnDate" type="xs:int"/>
+                    <xs:element name="TxnTime" type="xs:int"/>
+                    <xs:element name="TxnRefNum" type="xs:int"/>
+                    <xs:element name="ServiceId" type="xs:string"/>
+                    <xs:element name="ChannelType" type="xs:string"/>
+                    <xs:element name="VersionNum" type="xs:byte"/>
+                    <xs:element name="BrCode" type="xs:short"/>
+                    <xs:element name="HostUserId" type="xs:string"/>
+                    <xs:element name="MachineId" type="xs:string"/>
+                    <xs:element name="MachineRef" type="xs:string"/>
+                    <xs:element name="ModuleId" type="xs:string"/>
+                    <xs:element name="BatchId" type="xs:string"/>
+                    <xs:element name="ContinueOnError" type="xs:string"/>
+                    <xs:element name="IsOnline" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DataBlock">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="MOBENQ">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Data">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="TelNum" type="xs:int"/>
+                                <xs:element name="ServiceProvider" type="xs:string"/>
+                                <xs:element name="ActionId" type="xs:string"/>
+                                <xs:element name="ContractType" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+ <xs:element name="Reply">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Header">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Country" type="xs:string"/>
+                    <xs:element name="ChannelId" type="xs:string"/>
+                    <xs:element name="ChannelUserId" type="xs:string"/>
+                    <xs:element name="TxnDate" type="xs:int"/>
+                    <xs:element name="TxnTime" type="xs:int"/>
+                    <xs:element name="TxnRefNum" type="xs:int"/>
+                    <xs:element name="ServiceId" type="xs:string"/>
+                    <xs:element name="ChannelType" type="xs:string"/>
+                    <xs:element name="VersionNum" type="xs:byte"/>
+                    <xs:element name="BrCode" type="xs:short"/>
+                    <xs:element name="HostUserId" type="xs:string"/>
+                    <xs:element name="MachineId" type="xs:string"/>
+                    <xs:element name="MachineRef" type="xs:string"/>
+                    <xs:element name="ModuleId" type="xs:string"/>
+                    <xs:element name="BatchId" type="xs:string"/>
+                    <xs:element name="ContinueOnError" type="xs:string"/>
+                    <xs:element name="IsOnline" type="xs:string"/>
+                    <xs:element name="HostStatus" type="xs:string"/>
+                    <xs:element name="HostResponseCode" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="DataBlock">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="MOBENQ">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Data">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="TelNum" type="xs:int"/>
+                                <xs:element name="ServiceProvider" type="xs:string"/>
+                                <xs:element name="ActionId" type="xs:string"/>
+                                <xs:element name="ContractType" type="xs:string"/>
+                                <xs:element name="Status" type="xs:string"/>
+                                <xs:element name="RespStatus" type="xs:string"/>
+                                <xs:element name="RespCode" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
-</wsdl:types>
-<wsdl:message name="getCountryResponse">
-<wsdl:part element="tns:getCountryResponse" name="getCountryResponse"> </wsdl:part>
-</wsdl:message>
-<wsdl:message name="getCountryRequest">
-<wsdl:part element="tns:getCountryRequest" name="getCountryRequest"> </wsdl:part>
-</wsdl:message>
-<wsdl:portType name="CountriesPort">
-<wsdl:operation name="getCountry">
-<wsdl:input message="tns:getCountryRequest" name="getCountryRequest"> </wsdl:input>
-<wsdl:output message="tns:getCountryResponse" name="getCountryResponse"> </wsdl:output>
-</wsdl:operation>
-</wsdl:portType>
-<wsdl:binding name="CountriesPortSoap11" type="tns:CountriesPort">
-<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-<wsdl:operation name="getCountry">
-<soap:operation soapAction=""/>
-<wsdl:input name="getCountryRequest">
-<soap:body use="literal"/>
-</wsdl:input>
-<wsdl:output name="getCountryResponse">
-<soap:body use="literal"/>
-</wsdl:output>
-</wsdl:operation>
-</wsdl:binding>
-<wsdl:service name="CountriesPortService">
-<wsdl:port binding="tns:CountriesPortSoap11" name="CountriesPortSoap11">
-<soap:address location="http://localhost:8080/ws"/>
-</wsdl:port>
-</wsdl:service>
+  </wsdl:types>
+  <wsdl:portType name="CountriesPort">
+  </wsdl:portType>
+  <wsdl:binding name="CountriesPortSoap11" type="tns:CountriesPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  </wsdl:binding>
+  <wsdl:service name="CountriesPortService">
+    <wsdl:port binding="tns:CountriesPortSoap11" name="CountriesPortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>

@@ -11,7 +11,7 @@ import service.CountryClient;
 public class CountryConfiguration {
 
 	@Bean
-	public Jaxb2Marshaller marshaller() {
+	public Jaxb2Marshaller marshaller() throws Exception {
 		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
 		// this package must match the package in the <generatePackage> specified in
 		// pom.xml
@@ -20,7 +20,7 @@ public class CountryConfiguration {
 	}
 
 	@Bean
-	public CountryClient countryClient(Jaxb2Marshaller marshaller) {
+	public CountryClient countryClient(Jaxb2Marshaller marshaller) throws Exception {
 		CountryClient client = new CountryClient();
 		client.setDefaultUri("http://localhost:8080/ws");
 		client.setMarshaller(marshaller);
