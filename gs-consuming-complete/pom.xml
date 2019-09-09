@@ -34,17 +34,18 @@
 
     <build>
      <plugins>
-        <plugin>
+     <!-- this pluging is used to create wsld request and response classes in target folder with provided package -->
+     <!--    <plugin>
     <groupId>org.jvnet.jaxb2.maven2</groupId>
     <artifactId>maven-jaxb2-plugin</artifactId>
     <version>0.13.3</version>
- <!--   <executions>
+   <executions>
         <execution>
             <goals>
                 <goal>generate</goal>
             </goals>
         </execution>
-    </executions> -->
+    </executions>
     <configuration>
         <schemaLanguage>WSDL</schemaLanguage>
         <generatePackage>hello</generatePackage>
@@ -52,13 +53,13 @@
                 <schemaIncludes>
             <include>*.wsdl</include>
         </schemaIncludes>
-<!--         <schemas>
+        <schemas>
             <schema>
                 <url>http://localhost:8080/ws/countries.wsdl</url>
             </schema>
-        </schemas> -->
+        </schemas>
     </configuration>
-</plugin>
+</plugin> -->
  </plugins>
     </build>
 
