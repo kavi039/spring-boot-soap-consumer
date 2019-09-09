@@ -8,6 +8,8 @@
 
 package hello;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -186,7 +188,7 @@ import javax.xml.bind.annotation.XmlType;
     "reply"
 })
 @XmlRootElement(name = "param0")
-public class Param0 {
+public class Param0 implements Serializable {
 
     @XmlElement(name = "Request", required = true)
     protected Param0 .Request request;
@@ -332,7 +334,7 @@ public class Param0 {
         "dataBlock"
     })
 	@XmlRootElement(name = "Reply")
-    public static class Reply {
+	public static class Reply implements Serializable {
 
 		@XmlElement(name = "Header", required = false)
 		protected Param0.Reply.Header header = new Header();
@@ -438,7 +440,7 @@ public class Param0 {
             "mobenq"
         })
 		@XmlRootElement(name = "DataBlock")
-        public static class DataBlock {
+		public static class DataBlock implements Serializable {
 
             @XmlElement(name = "MOBENQ", required = true)
 			protected Param0.Reply.DataBlock.MOBENQ mobenq = new MOBENQ();
@@ -508,7 +510,7 @@ public class Param0 {
                 "data"
             })
 			@XmlRootElement(name = "MOBENQ")
-			public static class MOBENQ {
+			public static class MOBENQ implements Serializable {
 
                 @XmlElement(name = "Data", required = true)
 				protected Param0.Reply.DataBlock.MOBENQ.Data data = new Data();
@@ -574,7 +576,7 @@ public class Param0 {
                     "respCode"
                 })
 				@XmlRootElement(name = "Data")
-                public static class Data {
+				public static class Data implements Serializable {
 
                     @XmlElement(name = "TelNum")
                     protected int telNum;
@@ -818,7 +820,7 @@ public class Param0 {
             "hostResponseCode"
         })
 		@XmlRootElement(name = "Header")
-        public static class Header {
+		public static class Header implements Serializable {
 
             @XmlElement(name = "Country", required = true)
             protected String country;
@@ -1365,7 +1367,7 @@ public class Param0 {
         "dataBlock"
     })
 	@XmlRootElement(name = "Request")
-    public static class Request {
+	public static class Request implements Serializable {
 
         @XmlElement(name = "Header", required = true)
         protected Param0 .Request.Header header;
@@ -1757,7 +1759,7 @@ public class Param0 {
             "isOnline"
         })
 		@XmlRootElement(name = "Header")
-        public static class Header {
+		public static class Header implements Serializable {
 
             @XmlElement(name = "Country", required = true)
             protected String country;
